@@ -1,0 +1,31 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+# encrypted json file goes here
+#  - curl https://sdk.cloud.google.com | bash > /dev/null;
+#  - source $HOME/google-cloud-sdk/path.bash.inc
+#  - gcloud components update kubectl
+#  - gcloud auth activate-service-account --key-file service-account.json
+#  - glcoud config set project <project_name_here>
+#  - gcloud config set compute/zone <zone id here>
+#  - gcloud container clusters get-credentials multi-cluster
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#  - docker build -t toasty87multi-k8s -f ./client/Dockerfile.dev ./client
+
+script:
+#  - docker run -e CI=true toasty87/multi-k8s npm run test
+
+after_success:
+#  - docker build -t jwpacker/mulit-docker-client ./client
+#  - docker build -t jwpacker/mulit-docker-nginx ./nginx
+#  - docker build -t jwpacker/mulit-docker-server ./server
+#  - docker build -t jwpacker/mulit-docker-worker ./worker
+#Log into the docker CLI
+#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+# Take those images and push them to docker hub
+#  - docker push jwpacker/mulit-docker-nginx
+#  - docker push jwpacker/mulit-docker-client
+#  - docker push jwpacker/mulit-docker-server
+#  - docker push jwpacker/mulit-docker-worker
