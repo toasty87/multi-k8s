@@ -9,8 +9,8 @@ docker push jwpacker/mulit-docker-worker:latest
 docker push jwpacker/mulit-docker-client:$SHA
 docker push jwpacker/mulit-docker-server:$SHA
 docker push jwpacker/mulit-docker-worker:$SHA
-kubectl apply -f k8s --validate=false
+#kubectl apply -f k8s --validate=false
 
-kubectl set image deployments/client-deployment client=mulit-docker-client:$SHA
-kubectl set image deployments/server-deployment server=mulit-docker-server:$SHA
-kubectl set image deployments/worker-deployment worker=mulit-docker-worker:$SHA
+#kubectl set image deployments/client-deployment client=mulit-docker-client:$SHA
+#kubectl set image deployments/server-deployment server=mulit-docker-server:$SHA
+#kubectl set image deployments/worker-deployment worker=mulit-docker-worker:$SHA
